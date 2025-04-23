@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilar Transporte - Serviços de Mudanças e Transportes</title>
+    <meta name="description" content="Empresa especializada em mudanças residenciais e empresariais no Porto e região. Serviços de desmontagem, embalagem e transporte com segurança e qualidade.">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #00ff00;
+            --light-color: #ecf0f1;
+            --dark-color: #000000;
+            --text-color: #333;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #00cc00;
+            transform: translateY(-3px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--dark-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .features {
+            margin-bottom: 25px;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #00cc00;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Whatsapp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .mobile-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .mobile-menu.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="Pilar Transporte Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mudanças e Transportes com Segurança e Qualidade</h1>
+                <p>Serviços de mudanças residenciais e empresariais no Porto e região. Desmontagem, embalagem e transporte com profissionalismo.</p>
+                <a href="#contact" class="btn">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos soluções completas para suas necessidades de mudanças e transportes.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Mudanças Residenciais</h3>
+                    <p>Realizamos mudanças residenciais com segurança e eficiência, cuidando de todos os seus pertences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Mudanças Empresariais</h3>
+                    <p>Serviços especializados para empresas, garantindo a transferência segura de equipamentos e documentos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Desmontagem e Montagem</h3>
+                    <p>Desmontamos e montamos seus móveis com cuidado e precisão, incluído no valor do serviço.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Embalagem Profissional</h3>
+                    <p>Utilizamos materiais de qualidade para proteger seus pertences durante o transporte.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Transporte Seguro</h3>
+                    <p>Nossas carrinhas são monitoradas por GPS, garantindo segurança e rastreabilidade.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>Cobertura Regional</h3>
+                    <p>Atendemos Porto e região, com disponibilidade para serviços em Lisboa mediante consulta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre a Pilar Transporte</h2>
+                    <p>A Pilar Transporte é uma empresa com 3 anos de experiência no mercado de mudanças e transportes, comprometida com a qualidade e satisfação dos clientes.</p>
+                    <p>Contamos com uma equipe qualificada e veículos equipados para garantir a segurança dos seus pertences durante todo o processo de mudança.</p>
+                    <p>Nossa missão é proporcionar um serviço de mudanças tranquilo e eficiente, cuidando de cada detalhe para que você não precise se preocupar.</p>
+                    <a href="#contact" class="btn">Entre em Contato</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Equipe Pilar Transporte">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Preços</h2>
+                <p>Oferecemos serviços de qualidade com preços justos e transparentes.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Carrinha Média</h3>
+                    <div class="price">35€<span>/hora</span></div>
+                    <ul class="features">
+                        <li>2 Colaboradores</li>
+                        <li>Desmontagem/Montagem Incluída</li>
+                        <li>Serviço Mínimo de 2 Horas</li>
+                        <li>Monitoramento GPS</li>
+                        <li>Proteção com Plástico Filme (10€/rolo)</li>
+                    </ul>
+                    <a href="#contact" class="btn">Solicitar Orçamento</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Carrinha Grande</h3>
+                    <div class="price">45€<span>/hora</span></div>
+                    <ul class="features">
+                        <li>2 Colaboradores</li>
+                        <li>Desmontagem/Montagem Incluída</li>
+                        <li>Serviço Mínimo de 2 Horas</li>
+                        <li>Monitoramento GPS</li>
+                        <li>Proteção com Plástico Filme (10€/rolo)</li>
+                    </ul>
+                    <a href="#contact" class="btn">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Dizem Nossos Clientes</h2>
+                <p>A satisfação dos nossos clientes é o nosso maior orgulho.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Serviço excelente! A equipe foi muito profissional e cuidadosa com os meus móveis. Recomendo a todos que precisam de um serviço de mudanças confiável."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Cliente" class="author-image">
+                        <div class="author-info">
+                            <h4>Ana Silva</h4>
+                            <p>Porto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Contratei a Pilar Transporte para a mudança do meu escritório e fiquei muito satisfeito. Tudo foi feito com rapidez e eficiência, sem nenhum dano aos equipamentos."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Cliente" class="author-image">
+                        <div class="author-info">
+                            <h4>Carlos Oliveira</h4>
+                            <p>Matosinhos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Já utilizei o serviço da Pilar Transporte duas vezes e sempre fiquei satisfeita. Equipe pontual, educada e muito cuidadosa. Preço justo pelo serviço de qualidade."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Cliente" class="author-image">
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Vila Nova de Gaia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para ajudar com suas necessidades de mudanças e transportes.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <p>+351 915 823 130</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <p>pilartransporteslda@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <p>Porto, Portugal</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">⏰</div>
+                            <div>
+                                <p>Segunda a Sábado: 8h às 19h</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Siga-nos</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/pilartransportes/" target="_blank">📷</a>
+                        <a href="#" target="_blank">👍</a>
+                        <a href="#" target="_blank">🐦</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="orcamento-form">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servico">Tipo de Serviço</label>
+                            <select id="servico" name="servico" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="mudanca-residencial">Mudança Residencial</option>
+                                <option value="mudanca-empresarial">Mudança Empresarial</option>
+                                <option value="transporte-moveis">Transporte de Móveis</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Pilar Transporte</h3>
+                    <p>Empresa especializada em mudanças residenciais e empresariais no Porto e região.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/pilartransportes/" target="_blank">📷</a>
+                        <a href="#" target="_blank">👍</a>
+                        <a href="#" target="_blank">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#services">Mudanças Residenciais</a></li>
+                        <li><a href="#services">Mudanças Empresariais</a></li>
+                        <li><a href="#services">Desmontagem e Montagem</a></li>
+                        <li><a href="#services">Embalagem Profissional</a></li>
+                        <li><a href="#services">Transporte Seguro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>📱 +351 915 823 130</li>
+                        <li>✉️ pilartransporteslda@gmail.com</li>
+                        <li>📍 Porto, Portugal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pilar Transporte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/351915823130" class="whatsapp-btn" target="_blank">💬</a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const form = document.getElementById('orcamento-form');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For now, we'll just show an alert
+            alert('Obrigado pelo seu contato! Entraremos em contato em breve.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
